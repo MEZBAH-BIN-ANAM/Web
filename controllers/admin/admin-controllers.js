@@ -47,7 +47,7 @@ const loginAdmin = async (req, res) => {
     // 6. Set cookie
     res.cookie("adminToken", token, {
       httpOnly: true,
-      secure: false,         // set TRUE in production
+      secure: true,         // set TRUE in production
       sameSite: "lax",       // set 'none' in production if using cross-site
       maxAge: 30 * 24 * 60 * 60 * 1000,
     });
@@ -679,3 +679,4 @@ const deleteMessageById= async(req,res,next)=>{
 
 
 module.exports = { loginAdmin, logoutAdmin , getAllUsers, deleteUser, getUserById, UpdateUser, getAllProducts, createProduct, deleteProductById, getProductById, updateProduct, getAllcategory, addCategory,deleteCategory, addBanner,getAllBanner, getBannerById, deleteBanner, updateBanner, checkAdmin, getCatergoryById, updateCategory, getAllOrders, updateOrders, getAllMessage, deleteMessageById };
+
