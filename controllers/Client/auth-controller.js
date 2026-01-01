@@ -60,7 +60,7 @@ const login = async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: false,        // true in production 
+      secure: true,        // true in production 
       sameSite: "lax",       // set 'none' in production if using cross-site
       maxAge: 30 * 24 * 60 * 60 * 1000,
     });
@@ -98,3 +98,4 @@ const LogoutUser= (req, res) => {
 
 
 module.exports = { register, login , user, LogoutUser};
+
